@@ -1,43 +1,42 @@
 ﻿static void desglose()
 {
-    int can, can10, can20, can50, can100, can5;
-    can = can10 = can20 = can50 = can100 = can5 = 0;
+    float can, can10, can20, can50, can100, can5;
+    can = can10 = can20 = can50 = can100 = can5 = 0.00f;
     string linea;
     Console.WriteLine("Ingrese cantidad");
-    linea=Console.ReadLine();
-    can = Convert.ToInt32(linea);
+    can = float.Parse(Console.ReadLine());
 
     if ((can>=100))
     {
-        can100 = (can / 100);
+        can100 = (int) (can / 100);
        can = can - (can100 * 100);
 
     }
     if ((can >= 50))
     {
-        can50 = (can / 50);
+        can50 = (int)(can / 50);
         can = can - (can50 * 50);
 
     }
     if ((can>=20))
     {
-        can20=(can/ 20); 
+        can20= (int)(can/ 20); 
         can=can - (can20 * 20);
 
     }
     if ((can>=10))
     {
-        can10 = (can / 10);
+        can10 = (int)(can / 10);
         can = can - (can10 * 10);
     }
     if ((can>=5))
     {
-        can5 = (can / 5);
+        can5 = (int)(can / 5);
         can = can - (can5 * 5);
     }
     if ((can >=1))
     {
-        can = (can / 1);
+        can = (int)(can / 1);
         
     }
 
