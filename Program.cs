@@ -1,14 +1,20 @@
 ﻿static void desglose()
 {
-    float re, can, can1, can10, can20, can50, can100, can5, cm50, cm25, cm5, cm10;
-    re = can = can1 = can10 = can20 = can50 = can100 = can5 = cm50= cm25= cm5= cm10= 0.00f;
+    float re, can, can1, can10, can20, can50, can100, can200, can5, cm50, cm25, cm5, cm10;
+    re = can = can1 = can10 = can20 = can50 = can100 = can200 = can5 = cm50= cm25= cm5= cm10= 0.00f;
    
     Console.WriteLine("Ingrese cantidad");
     can = float.Parse(Console.ReadLine());
 
+    if (can >= 200)
+    {
+        can200 = (int)(can / 200);//devuelve un valor entero
+        can = can - (can200 * 200);
+
+    }
     if (can>=100)
     {
-        can100 = (int) (can / 100);//devuelve un valor entero
+        can100 = (int) (can / 100);
         can = can - (can100 * 100);
 
     }
@@ -67,6 +73,7 @@
     }
     //fin desglose 
 
+    Console.WriteLine($"Billetes de 200={can200}");
     Console.WriteLine($"Billetes de 100={can100}");
     Console.WriteLine($"Billetes de 50={can50}");
     Console.WriteLine($"Billetes de 20={can20}");
@@ -81,8 +88,8 @@
 }
 static void desgloseendolar()
 {
-    float dolar, re, can, can1, can10, can20, can50, can100, can5, cm50, cm25, cm5, cm10;
-    dolar = re = can = can1 = can10 = can20 = can50 = can100 = can5 = cm50 = cm25 = cm5 = cm10 = 0.00f;
+    float dolar, re, can, can1, can10, can20, can50, can100, can200, can5, cm50, cm25, cm5, cm10;
+    dolar = re = can = can1 = can10 = can20 = can50 = can100 = can200 = can5 = cm50 = cm25 = cm5 = cm10 = 0.00f;
 
     Console.WriteLine("Ingrese cantidad en Dolares");
     dolar = float.Parse(Console.ReadLine());
@@ -90,8 +97,13 @@ static void desgloseendolar()
     can = (dolar * 7.71f);//conversion de dolar a quetzal
    
     Console.WriteLine($"El Total de dolares en quetzales es ={can}");
-    
 
+    if (can >= 200)
+    {
+        can200 = (int)(can / 200);
+        can = can - (can200 * 200);
+
+    }
     if (can >= 100)
     {
         can100 = (int)(can / 100);
@@ -152,6 +164,7 @@ static void desgloseendolar()
 
     }
 
+    Console.WriteLine($"Billetes de 200={can200}");
     Console.WriteLine($"Billetes de 100={can100}");
     Console.WriteLine($"Billetes de 50={can50}");
     Console.WriteLine($"Billetes de 20={can20}");
@@ -165,5 +178,5 @@ static void desgloseendolar()
     Console.WriteLine($"Monedas de 0.01={re}");
 }
 
-//desglose();
+desglose();
 desgloseendolar();
