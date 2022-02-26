@@ -61,8 +61,8 @@
     }
     if (can >= 00.01f)
     {
-        can = (int)(can / 00.01f);  
-        can=(int)Math.Round(can);   
+        can = (can / 00.01f);  
+        re=(int)Math.Round(can);   
         
     }
 
